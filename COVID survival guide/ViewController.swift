@@ -7,31 +7,34 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-
-    @IBOutlet weak var mapView: MKMapView!
-    let locationManager = CLLocationManager()
-    var region = MKCoordinateRegion()
+class ViewController: UIViewController{
+    
+    
+    @IBOutlet weak var grocerySwitch: UISwitch!
+    @IBOutlet weak var groceryLabel: UILabel!
+    @IBOutlet weak var pharmacySwitch: UISwitch!
+    @IBOutlet weak var pharmacyLabel: UILabel!
+    @IBOutlet weak var gasSwitch: UISwitch!
+    @IBOutlet weak var gasLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    var groceryBool = false
+    var pharmacyBool = false
+    var gasBool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.requestWhenInUseAuthorization()
-        mapView.showsUserLocation = true
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.first!
-        let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
-        region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: true)
-    }
-
-
+    @IBAction func continueButtonTapped(_ sender: Any) {
+           performSegue(withIdentifier: "ShowMap", sender: self)
+          
+       }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+           let dvc = segue.destination as! MapViewController
+        //dvc.selectedBool =
+           
+       }
 }
 
