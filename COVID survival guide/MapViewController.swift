@@ -18,9 +18,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var groceryBool = false
     var pharmacyBool = false
     var gasBool = false
-    //var groceryData = Int()
-    //var pharmacyData = Int()
-    //var gasData = Int()
+    var mapItems = [MKMapItem]()
+    var selectedMapItem = MKMapItem()
+    let myAnnotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             print("pharmacy is true")
             request.naturalLanguageQuery = "pharmacy"
         }
-         if gasBool == true {
+        if gasBool == true {
             request.naturalLanguageQuery = "gas"
         }
         request.region = region
@@ -58,10 +58,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         search.start { (response, error) in
             if let response = response {
                 for mapItem in response.mapItems {
-                    print(mapItem.name!)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = mapItem.placemark.coordinate
+                    annotation.title = mapItem.name
+                    self.mapView.addAnnotation(annotation)
+                    self.mapItems.append(mapItem)
                 }
             }
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinView")
+            pinView?.canShowCallout = true
+            pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
+        } else {
+            pinView?.annotation = annotation
+        }
+        return pinView
+    }
 }
-

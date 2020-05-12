@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController{
     
-    
     @IBOutlet weak var grocerySwitch: UISwitch!
     @IBOutlet weak var groceryLabel: UILabel!
     @IBOutlet weak var pharmacySwitch: UISwitch!
@@ -21,9 +20,6 @@ class ViewController: UIViewController{
     var groceryBool = false
     var pharmacyBool = false
     var gasBool = false
-    //var groceryData = Int()
-    //var pharmacyData = Int()
-    //var gasData = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +44,14 @@ class ViewController: UIViewController{
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-           performSegue(withIdentifier: "ShowMap", sender: self)
-       }
+        performSegue(withIdentifier: "ShowMap", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
         let dvc = segue.destination as! MapViewController
-//        dvc.groceryData = groceryBool.hashValue
-//        dvc.pharmacyData = pharmacyBool.hashValue
-//        dvc.gasData = gasBool.hashValue
         dvc.groceryBool = groceryBool
+        dvc.pharmacyBool = pharmacyBool
+        dvc.gasBool = gasBool
     }
 }
 
