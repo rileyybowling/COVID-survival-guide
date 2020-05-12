@@ -82,4 +82,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return pinView
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        for mapItem in mapItems {
+            if mapItem.placemark.coordinate.latitude == view.annotation?.coordinate.latitude &&
+                 mapItem.placemark.coordinate.longitude == view.annotation?.coordinate.longitude {
+                    selectedMapItem = mapItem
+            }
+        }
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "ShowDetails", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! DetailsViewController
+        dvc.selectedMapItem = selectedMapItem
+    }
 }
