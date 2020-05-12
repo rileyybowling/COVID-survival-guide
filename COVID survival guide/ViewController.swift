@@ -21,20 +21,42 @@ class ViewController: UIViewController{
     var groceryBool = false
     var pharmacyBool = false
     var gasBool = false
+    //var groceryData = Int()
+    //var pharmacyData = Int()
+    //var gasData = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func grocerySwitchTapped(_ sender: Any) {
+        if grocerySwitch.isOn == true {
+            groceryBool = true
+        }
+    }
+    
+    @IBAction func pharmacySwitchTapped(_ sender: Any) {
+        if pharmacySwitch.isOn == true {
+            pharmacyBool = true
+        }
+    }
+    
+    @IBAction func gasSwitchTapped(_ sender: Any) {
+        if gasSwitch.isOn == true {
+            gasBool = true
+        }
+    }
+    
     @IBAction func continueButtonTapped(_ sender: Any) {
            performSegue(withIdentifier: "ShowMap", sender: self)
-          
        }
     
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
-           let dvc = segue.destination as! MapViewController
-        //dvc.selectedBool =
-           
-       }
+        let dvc = segue.destination as! MapViewController
+//        dvc.groceryData = groceryBool.hashValue
+//        dvc.pharmacyData = pharmacyBool.hashValue
+//        dvc.gasData = gasBool.hashValue
+        dvc.groceryBool = groceryBool
+    }
 }
 
