@@ -140,6 +140,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-MR-SwA">
+                                <rect key="frame" x="157" y="621" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="directions"/>
+                                <connections>
+                                    <action selector="directionsButtonTapped:" destination="SPj-Tg-PYQ" eventType="touchUpInside" id="6Cg-aJ-45g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoX-EU-xr3">
+                                <rect key="frame" x="157" y="563" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="website"/>
+                                <connections>
+                                    <action selector="websiteButtonTapped:" destination="SPj-Tg-PYQ" eventType="touchUpInside" id="IMK-T6-Fe8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="xL8-s8-aJe"/>
@@ -147,8 +163,10 @@
                     <navigationItem key="navigationItem" id="glz-qO-O0K"/>
                     <connections>
                         <outlet property="addressLabel" destination="wSD-8b-iMS" id="qzl-kj-JQr"/>
+                        <outlet property="directionsButton" destination="NoX-EU-xr3" id="lzF-cG-XRz"/>
                         <outlet property="nameLabel" destination="xQd-7F-b08" id="Tlh-DN-2Ta"/>
                         <outlet property="phoneLabel" destination="svL-ay-ob8" id="3pv-L2-1iR"/>
+                        <outlet property="websiteButton" destination="NoX-EU-xr3" id="GQD-wu-5tQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTx-Hf-d0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -44,7 +44,11 @@ class ViewController: UIViewController{
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
+        if groceryBool == false && pharmacyBool == false && gasBool == false {
+            displayMessage(message: "please select one or multiple of the essential services provided to continue")
+        } else {
         performSegue(withIdentifier: "ShowMap", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
@@ -53,5 +57,12 @@ class ViewController: UIViewController{
         dvc.pharmacyBool = pharmacyBool
         dvc.gasBool = gasBool
     }
+    
+    func displayMessage(message: String){
+       let alertController = UIAlertController(title: message, message:
+           nil, preferredStyle: .alert)
+       alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+       self.present(alertController, animated: true, completion: nil)
+       }
 }
 
