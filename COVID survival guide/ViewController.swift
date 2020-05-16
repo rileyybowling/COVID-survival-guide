@@ -17,9 +17,11 @@ class ViewController: UIViewController{
     @IBOutlet weak var gasSwitch: UISwitch!
     @IBOutlet weak var gasLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var dataButton: UIButton!
     var groceryBool = false
     var pharmacyBool = false
     var gasBool = false
+    var continueBool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +49,22 @@ class ViewController: UIViewController{
         if groceryBool == false && pharmacyBool == false && gasBool == false {
             displayMessage(message: "please select one or multiple of the essential services provided to continue")
         } else {
-        performSegue(withIdentifier: "ShowMap", sender: self)
+            continueBool = true
+            performSegue(withIdentifier: "ShowMap", sender: self)
         }
     }
     
+    @IBAction func dataButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "ShowNews", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+        if continueBool == true {
         let dvc = segue.destination as! MapViewController
         dvc.groceryBool = groceryBool
         dvc.pharmacyBool = pharmacyBool
         dvc.gasBool = gasBool
+        }
     }
     
     func displayMessage(message: String){
