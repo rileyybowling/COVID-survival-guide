@@ -55,23 +55,23 @@ class ViewController: UIViewController{
     }
     
     @IBAction func dataButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "ShowNews", sender: self)
+        performSegue(withIdentifier: "ShowNewsa", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
         if continueBool == true {
-        let dvc = segue.destination as! MapViewController
-        dvc.groceryBool = groceryBool
-        dvc.pharmacyBool = pharmacyBool
-        dvc.gasBool = gasBool
+            let dvc = segue.destination as! MapViewController
+            dvc.groceryBool = groceryBool
+            dvc.pharmacyBool = pharmacyBool
+            dvc.gasBool = gasBool
         }
     }
     
     func displayMessage(message: String){
-       let alertController = UIAlertController(title: message, message:
-           nil, preferredStyle: .alert)
-       alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-       self.present(alertController, animated: true, completion: nil)
-       }
+        let alertController = UIAlertController(title: message, message:
+            nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 

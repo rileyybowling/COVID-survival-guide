@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var groceryBool = false
     var pharmacyBool = false
     var gasBool = false
+    var selectedBool = false
     var mapItems = [MKMapItem]()
     var selectedMapItem = MKMapItem()
     let myAnnotation = MKPointAnnotation()
@@ -39,15 +40,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.setRegion(region, animated: true)
     }
     
-    
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         let request = MKLocalSearch.Request()
         if groceryBool == true {
-            print("grocery is true")
             request.naturalLanguageQuery = "grocery"
         }
         if pharmacyBool == true {
-            print("pharmacy is true")
             request.naturalLanguageQuery = "pharmacy"
         }
         if gasBool == true {
@@ -91,12 +89,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        selectedBool = true
         performSegue(withIdentifier: "ShowDetails", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if selectedBool == true {
         let dvc = segue.destination as! DetailsViewController
         dvc.selectedMapItem = selectedMapItem
+        }
     }
 }
