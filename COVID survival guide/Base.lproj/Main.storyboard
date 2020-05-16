@@ -119,6 +119,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fLT-5b-NXQ" kind="show" identifier="ShowNewsDetails" id="uce-B2-28h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -130,7 +133,59 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1g-QH-pGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407.2463768115942" y="-574.55357142857144"/>
+            <point key="canvasLocation" x="1629" y="-575"/>
+        </scene>
+        <!--News Details View Controller-->
+        <scene sceneID="QBz-B5-9PI">
+            <objects>
+                <viewController id="fLT-5b-NXQ" customClass="NewsDetailsViewController" customModule="COVID_survival_guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBD-lt-XIL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total confirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-ZD-zfP">
+                                <rect key="frame" x="132" y="176" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total deaths" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HM-p4-4Qa">
+                                <rect key="frame" x="132" y="234" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total recovered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-lI-h5m">
+                                <rect key="frame" x="132" y="292" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inR-Db-jdS">
+                                <rect key="frame" x="132" y="81" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uZL-Br-Giv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="reY-xm-1Sc"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="inR-Db-jdS" id="CWV-Tb-HqH"/>
+                        <outlet property="totalConfirmedLabel" destination="Xdd-ZD-zfP" id="bIW-qc-eH3"/>
+                        <outlet property="totalDeathsLabel" destination="8HM-p4-4Qa" id="TI2-Mu-0Kb"/>
+                        <outlet property="totalRecoveredLabel" destination="iaF-lI-h5m" id="rQO-ds-3IS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MK8-52-PoP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2422" y="-575"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Cg9-Vt-hBz">
@@ -237,7 +292,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3h-bN-j4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497.10144927536237" y="-574.55357142857144"/>
+            <point key="canvasLocation" x="857" y="-575"/>
         </scene>
     </scenes>
 </document>

@@ -62,7 +62,6 @@ class NewsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let place = places[indexPath.row]
         cell.textLabel?.text = place["Country"]
-        
         return cell
     }
 }

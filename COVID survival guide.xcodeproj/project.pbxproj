@@ -10,6 +10,7 @@
 		D113D28D246B478D005496F7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D113D28C246B478D005496F7 /* DetailsViewController.swift */; };
 		D1C6887C246F3BB60020AFF4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6887B246F3BB50020AFF4 /* SwiftyJSON.swift */; };
 		D1C6887E246F8F8E0020AFF4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6887D246F8F8E0020AFF4 /* NewsViewController.swift */; };
+		D1C68880246F99B10020AFF4 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6887F246F99B10020AFF4 /* NewsDetailsViewController.swift */; };
 		D1E86BDF2448BC56000F9C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E86BDE2448BC56000F9C49 /* AppDelegate.swift */; };
 		D1E86BE12448BC56000F9C49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E86BE02448BC56000F9C49 /* SceneDelegate.swift */; };
 		D1E86BE32448BC56000F9C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E86BE22448BC56000F9C49 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		D113D28C246B478D005496F7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D1C6887B246F3BB50020AFF4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../SwiftyJSON-master/Source/SwiftyJSON/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		D1C6887D246F8F8E0020AFF4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		D1C6887F246F99B10020AFF4 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		D1E86BDB2448BC56000F9C49 /* COVID survival guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID survival guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E86BDE2448BC56000F9C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E86BE02448BC56000F9C49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				D1E86BF2244DFE49000F9C49 /* MapViewController.swift */,
 				D113D28C246B478D005496F7 /* DetailsViewController.swift */,
 				D1C6887D246F8F8E0020AFF4 /* NewsViewController.swift */,
+				D1C6887F246F99B10020AFF4 /* NewsDetailsViewController.swift */,
 				D1E86BE42448BC56000F9C49 /* Main.storyboard */,
 				D1E86BE72448BC59000F9C49 /* Assets.xcassets */,
 				D1C6887B246F3BB50020AFF4 /* SwiftyJSON.swift */,
@@ -154,6 +157,7 @@
 				D1E86BDF2448BC56000F9C49 /* AppDelegate.swift in Sources */,
 				D1E86BE12448BC56000F9C49 /* SceneDelegate.swift in Sources */,
 				D1E86BF3244DFE49000F9C49 /* MapViewController.swift in Sources */,
+				D1C68880246F99B10020AFF4 /* NewsDetailsViewController.swift in Sources */,
 				D1C6887E246F8F8E0020AFF4 /* NewsViewController.swift in Sources */,
 				D1C6887C246F3BB60020AFF4 /* SwiftyJSON.swift in Sources */,
 				D113D28D246B478D005496F7 /* DetailsViewController.swift in Sources */,
